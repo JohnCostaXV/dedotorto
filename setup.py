@@ -54,7 +54,7 @@ async def on_member_join(member):
     embed.set_author(name='Olá {}!'.format(member.name))
     embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
-    await client.send_message(canal, member.mention)
+    await client.send_message(canal, embed=embed)
     cargo = discord.utils.get(member.server.roles, name="Registrado")
     await client.add_roles(member, cargo)
     print("Adicionado o cargo '" + role.name + "' para " + member.name)
