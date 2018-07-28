@@ -73,7 +73,7 @@ async def on_message(message):
                     asyncio.sleep(10)
                     args = message.content.split(" ")
                     await client.delete_message(message)
-                    channel1 = client.get_channel('448449971629588481')
+                    channel1 = client.get_channel('470673691827634176')
                     user = message.mentions[0]
                     await client.ban(user)
                     join = (" ".join(args[2:]))
