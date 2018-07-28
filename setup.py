@@ -49,7 +49,7 @@ async def on_member_join(member):
     embed = discord.Embed(
         title='',
         color=COR,
-        description='Seja bem-vindo(a) ao nosso servidor de Discord Debuggers!'
+        description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
     )
     embed.set_author(name='Olá {}!'.format(member.name))
     embed.set_thumbnail(url=member.avatar_url)
