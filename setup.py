@@ -57,7 +57,7 @@ async def on_member_join(member):
     await client.send_message(canal, embed=embed)
     cargo = discord.utils.get(member.server.roles, name="Registrado")
     await client.add_roles(member, cargo)
-    print("Adicionado o cargo '" + role.name + "' para " + member.name)
+    print("Adicionado o cargo '" + cargo.name + "' para " + member.name)
 
 @client.event
 async def on_message(message):
