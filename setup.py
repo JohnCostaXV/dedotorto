@@ -88,15 +88,15 @@ async def on_message(message):
                     embed.timestamp = datetime.datetime.utcnow()
                     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
                     await client.send_message(channel1, embed=embed)
-                 else:
-                    embed2 = discord.Embed(
-                        title='Permissão negada!',
-                        color=COR,
-                        description='Você não tem permissão para executar esse comando.'
-                    )
-                    embed2.timestamp = datetime.datetime.utcnow()
-                    embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
-                    await client.send_message(message.channel, embed=embed2)
+            else:
+                 embed2 = discord.Embed(
+                     title='Permissão negada!',
+                     color=COR,
+                     description='Você não tem permissão para executar esse comando.'
+                 )
+                 embed2.timestamp = datetime.datetime.utcnow()
+                 embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                 await client.send_message(message.channel, embed=embed2)
         except IndexError:
             await client.delete_message(message)
             embedd = discord.Embed(
