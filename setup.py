@@ -78,6 +78,7 @@ async def on_reaction_add(reaction, user):
      await client.add_roles(user, role)
      print("adicionado o cargo " + role.name + " para " + user.name)
      await client.remove_roles(user, role1)
+     await client.delete_message(msg)
 
      canal = client.get_channel('470361261930971148')
      embed = discord.Embed(
