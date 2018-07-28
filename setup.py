@@ -83,10 +83,10 @@ async def on_message(message):
                         description='O usuário **{}#{}**, foi banido!\n\n**Motivo**: {}\n**Autor**: {}'.format(user.name, user.discriminator, join, message.author.mention)
                     )
                     embed.set_thumbnail(
-                        url='https://i.imgur.com/1iJeEea.jpg'
+                        url='https://media.giphy.com/media/qPD4yGsrc0pdm/giphy.gif'
                     )
                     embed.timestamp = datetime.datetime.utcnow()
-                    embed.set_footer(text='End', icon_url='https://i.imgur.com/1iJeEea.jpg')
+                    embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
                     await client.send_message(channel1, embed=embed)
         except IndexError:
             await client.delete_message(message)
