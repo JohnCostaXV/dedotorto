@@ -13,7 +13,6 @@ import json
 import base64
 
 RANDOM_STATUS = ['em Desenvolvendo']
-RANDOM_MENSAGENS = ['AsCD', 'BabV', 'KaOx', 'LdXa', 'AuTi', 'MsGi', 'PoNti']
 
 
 client = discord.Client()
@@ -47,17 +46,36 @@ async def on_ready():
 async def on_member_join(member):
     canal = client.get_channel('470361261930971148')
     embed = discord.Embed(
-        title='',
+        title='Instruções abaixo:',
         color=COR,
-        description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
+        description='Para se autenticar e, ter acesso à todos os canais, você deve clicar na reação da mensagem(🔐).'
     )
-    embed.set_author(name='Olá {}!'.format(member.name))
-    embed.set_thumbnail(url=member.avatar_url)
+    embed.set_author(name='Sistema de verificação', icon_url=member.avatar_url)
+    embed.set_thumbnail(url='https://media.giphy.com/media/8maYChvLIGU8jhsHl2/giphy.gif')
     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
-    await client.send_message(canal, embed=embed)
-    cargo = discord.utils.get(member.server.roles, name="Registrado")
+    botmsg = await client.send_message(canal, embed=embed)
+    cargo = discord.utils.get(member.server.roles, name="Sem registro")
     await client.add_roles(member, cargo)
     print("Adicionado o cargo '" + cargo.name + "' para " + member.name)
+
+    await client.add_reaction(botmsg, "🔐")
+
+
+    global msg_id
+    msg_id = botmsg.id
+
+    global msg_user
+    msg_user = message.author
+
+
+@client.event
+async def on_reaction_add(reaction, user):
+    msg = reaction.message
+
+    if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
+     role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
+     await client.add_roles(user, role)
+     print("adicionado o cargo " + role.name + " para " + member.name)
 
 @client.event
 async def on_message(message):
