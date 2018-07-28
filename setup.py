@@ -76,7 +76,6 @@ async def on_reaction_add(reaction, user):
      role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
      role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
      await client.add_roles(user, role)
-     print("adicionado o cargo " + role.name + " para " + user.name)
      await client.remove_roles(user, role1)
      await client.delete_message(msg)
 
