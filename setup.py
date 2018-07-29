@@ -61,7 +61,7 @@ async def on_member_join(member):
     botmsg = await client.send_message(canal, embed=embed)
 
     await client.add_reaction(botmsg, "🔐")
-    time.sleep(30)
+    await asyncio.sleep(30)
     await client.delete_message(botmsg)
 
     global msg_id
