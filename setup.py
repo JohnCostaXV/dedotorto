@@ -78,6 +78,9 @@ async def on_reaction_add(reaction, user):
      role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
      await client.remove_roles(user, role1)
 
+
+     remover_messagem = message.content.replace("Debuggers", client.delete_message(msg))
+
      canal = client.get_channel('470361261930971148')
      embed = discord.Embed(
         title='',
