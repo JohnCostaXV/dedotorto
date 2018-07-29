@@ -12,7 +12,7 @@ import re
 import json
 import base64
 
-RANDOM_STATUS = ['em Desenvolvendo']
+RANDOM_STATUS = ['Debuggers']
 
 
 client = discord.Client()
@@ -36,7 +36,7 @@ async def on_ready():
     print('Status = {}'.format(RANDOM_STATUS))
     try:
         choice = random.choice(RANDOM_STATUS)
-        await client.change_presence(game=discord.Game(name=choice, type=1))
+        await client.change_presence(game=discord.Game(name=choice, url='https://www.twitch.tv/johncostaxv', type=1))
         await client.send_message(client, "Online!")
     except Exception as e:
         print("Todos direitos {}.".format("reservados"))
@@ -424,7 +424,6 @@ async def on_reaction_add(reaction, user):
      embed.set_thumbnail(url=user.avatar_url)
      embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
      await client.send_message(canal, embed=embed)
-
 
 
 client.run(os.environ.get("BOT_TOKEN"))
