@@ -44,31 +44,6 @@ async def on_ready():
 
 
 @client.event
-async def on_reaction_add(reaction, user):
-    msg = reaction.message
-
-    if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
-     role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
-     await client.add_roles(user, role)
-     role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
-     await client.remove_roles(user, role1)
-
-
-     canal = client.get_channel('470361261930971148')
-     embed = discord.Embed(
-        title='',
-        color=COR,
-        description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
-     )
-     embed.set_author(name='Olá {}!'.format(user.name))
-     embed.set_thumbnail(url=user.avatar_url)
-     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
-     await client.send_message(canal, embed=embed)
-
-     time.sleep(10)
-     await client.delete_message(msg)
-
-@client.event
 async def on_message(message):
     if message.content.lower().startswith('d!log'):
         canal = client.get_channel('472896652110331924')
@@ -424,5 +399,32 @@ async def on_message(message):
         embed.timestamp = datetime.datetime.utcnow()
         embed.set_footer(text="End", icon_url="https://i.imgur.com/1iJeEea.jpg")
         await client.send_message(message.channel, embed=embed)
+
+@client.event
+async def on_reaction_add(reaction, user):
+    msg = reaction.message
+
+    if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
+     role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
+     await client.add_roles(user, role)
+     role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
+     await client.remove_roles(user, role1)
+
+
+     canal = client.get_channel('470361261930971148')
+     embed = discord.Embed(
+        title='',
+        color=COR,
+        description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
+     )
+     embed.set_author(name='Olá {}!'.format(user.name))
+     embed.set_thumbnail(url=user.avatar_url)
+     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+     await client.send_message(canal, embed=embed)
+
+     time.sleep(10)
+     await client.delete_message(msg)
+
+
 
 client.run(os.environ.get("BOT_TOKEN"))
