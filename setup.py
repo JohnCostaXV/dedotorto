@@ -59,8 +59,6 @@ async def on_member_join(member):
     print("Adicionado o cargo '" + cargo.name + "' para " + member.name)
 
     await client.add_reaction(botmsg, "🔐")
-    time.sleep(10)
-    await client.remove_reaction(botmsg, "🔐")
 
 
     global msg_id
@@ -73,6 +71,7 @@ async def on_member_join(member):
 @client.event
 async def on_reaction_add(reaction, user):
     msg = reaction.message
+    await client.remove_reaction(msg.id == msg_id, "🔐")
 
     if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
      role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
