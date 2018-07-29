@@ -68,7 +68,7 @@ async def on_member_join(member):
     msg_id = botmsg.id
 
     global msg_user
-    msg_user = message.author
+    msg_user = member
 
 @client.event
 async def on_reaction_add(reaction, user):
