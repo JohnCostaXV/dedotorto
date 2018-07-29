@@ -42,6 +42,10 @@ async def on_ready():
         print("Todos direitos {}.".format("reservados"))
     print("Copyright ©")
 
+@client.event
+async def on_member_join(member):
+    cargo = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
+    await client.add_roles(member, cargo)
 
 @client.event
 async def on_message(message):
