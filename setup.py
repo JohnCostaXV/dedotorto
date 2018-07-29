@@ -12,7 +12,7 @@ import re
 import json
 import base64
 
-RANDOM_STATUS = ['Debuggers']
+RANDOM_STATUS = ['Debuggers', 'Use d!help p/ suporte', 'Estou servindo à '+ server.member +' membros!']
 
 
 client = discord.Client()
