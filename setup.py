@@ -97,15 +97,16 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith('!publicar'):
+    if message.content.lower().startswith('d!publicar'):
         cargos = [
             # IDs dos cargos:
             "472535248408674304", #Vendedor
         ]
         for r in message.author.roles:
             if r.id in cargos:
+                await client.delete_message(message)
                 canal = client.get_channel('472921735805534240')
-                remover_publicacao = message.content.replace("!publicar", "")
+                remover_publicacao = message.content.replace("d!publicar", "")
                 separar = remover_publicao.split("|", 2)
                 embed = discord.Embed(
                     title='Produto à venda!',
@@ -142,7 +143,7 @@ async def on_message(message):
                 embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
                 await client.send_message(canal, embed=embed)
 
-    if message.content.lower().startswith('!ban'):
+    if message.content.lower().startswith('d!ban'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -201,7 +202,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('!unmute'):
+    if message.content.lower().startswith('d!unmute'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -249,7 +250,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('!mute'):
+    if message.content.lower().startswith('d!mute'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -295,7 +296,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('!say'):
+    if message.content.lower().startswith('d!say'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -332,7 +333,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('!anunciar'):
+    if message.content.lower().startswith('d!anunciar'):
             try:
                 cargos = [
                     # IDs dos cargos:
@@ -379,7 +380,7 @@ async def on_message(message):
             finally:
                 pass
 
-    if message.content.lower().startswith('!avatar'):
+    if message.content.lower().startswith('d!avatar'):
         try:
             user = message.mentions[0]
             embed = discord.Embed(
@@ -407,7 +408,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('!serverinfo'):
+    if message.content.lower().startswith('d!serverinfo'):
         embed = discord.Embed(
             title='Informações do Servidor',
             color=0x03c3f5,
