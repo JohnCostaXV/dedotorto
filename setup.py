@@ -62,11 +62,11 @@ async def on_message(message):
         await client.add_reaction(botmsg, "🔐")
 
 
-    global msg_id
-    msg_id = botmsg.id
+        global msg_id
+        msg_id = botmsg.id
 
-    global msg_user
-    msg_user = message.author
+        global msg_user
+        msg_user = message.author
 
 
 
