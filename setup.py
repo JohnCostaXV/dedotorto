@@ -417,7 +417,7 @@ async def on_message(message):
         embed.add_field(name=":family: Membros:", value=len(message.server.members), inline=True)
         embed.add_field(name=":date: Criado em:", value=message.server.created_at.strftime("%d de %bho, %Y às %H:%M"))
         embed.add_field(name="Emojis:", value=f"{len(message.server.emojis)}/100")
-        embed.add_field(name=":flag_br: Região:", value=str(message.server.region).title())
+        embed.add_field(name=":flag_br: Região:", value='Brasil')#str(message.server.region).title())
         embed.set_thumbnail(url='https://i.imgur.com/1iJeEea.jpg')
         embed.timestamp = datetime.datetime.utcnow()
         embed.set_footer(text="End", icon_url="https://i.imgur.com/1iJeEea.jpg")
