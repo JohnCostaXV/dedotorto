@@ -106,7 +106,7 @@ async def on_message(message):
             if r.id in cargos:
                 await client.delete_message(message)
                 canal = client.get_channel('472921735805534240')
-                remover_publicacao = message.content.replace("d!publicar", "")
+                remover_publicacao = message.content.replace("d!publicar ", "")
                 separar = remover_publicacao.split("|", 2)
                 embed = discord.Embed(
                     title='Produto à venda!',
