@@ -98,12 +98,49 @@ async def on_reaction_add(reaction, user):
 @client.event
 async def on_message(message):
     if message.content.lower().startswith('!publicar'):
-        embed = discord.Embed(
-            title='Produto à venda!',
-            color=COR,
-            description=''
-        )
-
+        cargos = [
+            # IDs dos cargos:
+            "472535248408674304", #Vendedor
+        ]
+        for r in message.author.roles:
+            if r.id in cargos:
+                canal = client.get_channel('472921735805534240')
+                remover_publicacao = message.content.replace("!publicar", "")
+                separar = remover_publicao.split("|", 2)
+                embed = discord.Embed(
+                    title='Produto à venda!',
+                    color=COR,
+                    description='Caso queria saber mais sobre este produto, entre em contato com o vendedor! Clique na reação abaixo (reaction) para solicitar atendimento (tenha a sua DM liberada)'
+                )
+                embed.add_field(
+                    name='Vendedor:',
+                    value=message.author.mention,
+                    inline=False
+                )
+                embed.add_field(
+                    name='Produto:',
+                    value='%s' % ''.join(separar[0]),
+                    inline=False
+                )
+                embed.add_field(
+                    name='Descrição do produto:',
+                    value='%s' % ''.join(separar[1]),
+                    inline=False
+                )
+                embed.add_field(
+                    name='Linguagem do produto:',
+                    value='%s' % ''.join(separar[2]),
+                    inline=False
+                )
+                embed.add_field(
+                    name='Valor do produto:',
+                    value='%s' % ''.join(separar[3]),
+                    inline=False
+                )
+                embed.set_thumbnail(url='https://media.giphy.com/media/26uf4LsTj87JjVDbO/giphy.gif')
+                embed.timestamp = datetime.datetime.utcnow()
+                embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+                await client.send_message(canal, embed=embed)
 
     if message.content.lower().startswith('!ban'):
         try:
