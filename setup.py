@@ -44,7 +44,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith('p!log'):
+    if message.content.lower().startswith('d!log'):
         canal = client.get_channel('472896652110331924')
 
         embed = discord.Embed(
