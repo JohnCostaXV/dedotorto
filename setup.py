@@ -71,7 +71,6 @@ async def on_member_join(member):
 @client.event
 async def on_reaction_add(reaction, user):
     msg = reaction.message
-    await client.remove_reaction(msg.id == msg_id, "🔐")
 
     if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
      role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
@@ -98,7 +97,15 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith('/ban'):
+    if message.content.lower().startswith('!publicar'):
+        embed = discord.Embed(
+            title='Produto à venda!',
+            color=COR,
+            description=''
+        )
+
+
+    if message.content.lower().startswith('!ban'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -139,7 +146,7 @@ async def on_message(message):
             embedd = discord.Embed(
                 title='Comando incorreto!',
                 color=COR,
-                description='Use `/ban [username] [motivo]`'
+                description='Use `!ban [username] [motivo]`'
             )
             embedd.timestamp = datetime.datetime.utcnow()
             embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
@@ -157,7 +164,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('/unmute'):
+    if message.content.lower().startswith('!unmute'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -187,7 +194,7 @@ async def on_message(message):
             embedd = discord.Embed(
                 title='Comando incorreto!',
                 color=COR,
-                description='Use `/unmute [username]`'
+                description='Use `!unmute [username]`'
             )
             embedd.timestamp = datetime.datetime.utcnow()
             embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
@@ -205,7 +212,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('/mute'):
+    if message.content.lower().startswith('!mute'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -233,7 +240,7 @@ async def on_message(message):
             embedd = discord.Embed(
                 title='Comando incorreto!',
                 color=COR,
-                description='Use `/mute [username] [motivo]`'
+                description='Use `!mute [username] [motivo]`'
             )
             embedd.timestamp = datetime.datetime.utcnow()
             embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
@@ -251,7 +258,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('/say'):
+    if message.content.lower().startswith('!say'):
         try:
             cargos = [
                 # IDs dos cargos:
@@ -270,7 +277,7 @@ async def on_message(message):
             embedd = discord.Embed(
                 title='Comando incorreto!',
                 color=COR,
-                description='Use `/say [mensagem]`'
+                description='Use `!say [mensagem]`'
             )
             embedd.timestamp = datetime.datetime.utcnow()
             embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
@@ -288,7 +295,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('/anunciar'):
+    if message.content.lower().startswith('!anunciar'):
             try:
                 cargos = [
                     # IDs dos cargos:
@@ -317,7 +324,7 @@ async def on_message(message):
                 embedd = discord.Embed(
                     title='Comando incorreto!',
                     color=COR,
-                    description='Use `/anunciar [mensagem]`'
+                    description='Use `!anunciar [mensagem]`'
                 )
                 embedd.timestamp = datetime.datetime.utcnow()
                 embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
@@ -335,7 +342,7 @@ async def on_message(message):
             finally:
                 pass
 
-    if message.content.lower().startswith('/avatar'):
+    if message.content.lower().startswith('!avatar'):
         try:
             user = message.mentions[0]
             embed = discord.Embed(
@@ -363,7 +370,7 @@ async def on_message(message):
         finally:
             pass
 
-    if message.content.lower().startswith('/serverinfo'):
+    if message.content.lower().startswith('!serverinfo'):
         embed = discord.Embed(
             title='Informações do Servidor',
             color=0x03c3f5,
