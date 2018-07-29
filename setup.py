@@ -59,6 +59,8 @@ async def on_member_join(member):
     print("Adicionado o cargo '" + cargo.name + "' para " + member.name)
 
     await client.add_reaction(botmsg, "🔐")
+    time.sleep(10)
+    await client.remove_reaction(botmsg, "🔐")
 
 
     global msg_id
