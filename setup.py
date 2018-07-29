@@ -427,6 +427,4 @@ async def on_reaction_add(reaction, user):
      await client.send_message(canal, embed=embed)
 
 
-
-
 client.run(os.environ.get("BOT_TOKEN"))
