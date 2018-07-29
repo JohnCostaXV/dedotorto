@@ -44,7 +44,7 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    cargo = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
+    cargo = discord.utils.get(member.server.roles, name="Sem registro")
     await client.add_roles(member, cargo)
 
 @client.event
