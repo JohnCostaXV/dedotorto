@@ -426,8 +426,6 @@ async def on_reaction_add(reaction, user):
      embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
      await client.send_message(canal, embed=embed)
 
-     time.sleep(10)
-     await client.delete_message(msg)
 
 
 
