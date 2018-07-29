@@ -87,7 +87,7 @@ async def on_message(message):
                 )
                 embed.add_field(
                     name='Valor do produto:',
-                    value='10',
+                    value='%s' % ''.join(separar[2]),
                     inline=False
                 )
                 embed.set_thumbnail(url='https://media.giphy.com/media/26uf4LsTj87JjVDbO/giphy.gif')
