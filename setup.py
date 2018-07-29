@@ -75,9 +75,10 @@ async def on_reaction_add(reaction, user):
     if reaction.emoji == "🔐" and msg.id == msg_id: #and user == msg_user:
      role = discord.utils.find(lambda r: r.name == "Registrado", msg.server.roles)
      await client.add_roles(user, role)
-     await client.delete_message(msg)
      role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
      await client.remove_roles(user, role1)
+     time.sleep(10)
+     await client.delete_message(msg)
 
      canal = client.get_channel('470361261930971148')
      embed = discord.Embed(
