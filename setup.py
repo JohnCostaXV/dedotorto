@@ -43,29 +43,29 @@ async def on_ready():
     print("Copyright ©")
 
 @client.event
-async def on_member_join(member):
-    canal = client.get_channel('472896652110331924')
-    embed = discord.Embed(
-        title='Instruções abaixo:',
-        color=COR,
-        description='Para se autenticar e, ter acesso à todos os canais, você deve clicar na reação da mensagem (`🔐`).'
-    )
-    embed.set_author(name='Sistema de verificação', icon_url=member.avatar_url)
-    embed.set_thumbnail(url='https://media.giphy.com/media/8maYChvLIGU8jhsHl2/giphy.gif')
-    embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
-    botmsg = await client.send_message(canal, embed=embed)
-    cargo = discord.utils.get(member.server.roles, name="Sem registro")
-    await client.add_roles(member, cargo)
-    print("Adicionado o cargo '" + cargo.name + "' para " + member.name)
+async def on_message(message):
+    if message.content.lower().startswith('p!log'):
+        canal = client.get_channel('472896652110331924')
 
-    await client.add_reaction(botmsg, "🔐")
+        embed = discord.Embed(
+            title='Instruções abaixo:',
+            color=COR,
+            description='Para se autenticar e, ter acesso à todos os canais, você deve clicar na reação da mensagem (`🔐`).'
+        )
+        embed.set_author(name='Sistema de verificação', icon_url='https://media.giphy.com/media/fdkbq4UIYpRMk/giphy.gif')
+        embed.set_thumbnail(url='https://media.giphy.com/media/8maYChvLIGU8jhsHl2/giphy.gif')
+        embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+
+        botmsg = await client.send_message(canal, embed=embed)
+
+        await client.add_reaction(botmsg, "🔐")
 
 
-    global msg_id
-    msg_id = botmsg.id
+        global msg_id
+        msg_id = botmsg.id
 
-    global msg_user
-    msg_user = member
+        global msg_user
+        msg_user = message.author
 
 
 @client.event
@@ -78,8 +78,6 @@ async def on_reaction_add(reaction, user):
      role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
      await client.remove_roles(user, role1)
 
-
-     remover_messagem = message.content.replace("Debuggers")
 
      canal = client.get_channel('470361261930971148')
      embed = discord.Embed(
@@ -135,7 +133,7 @@ async def on_message(message):
                 )
                 embed.add_field(
                     name='Valor do produto:',
-                    value='10',
+                    value=' '.join(separar[3]),
                     inline=False
                 )
                 embed.set_thumbnail(url='https://media.giphy.com/media/26uf4LsTj87JjVDbO/giphy.gif')
