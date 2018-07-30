@@ -44,23 +44,20 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    cargo = discord.utils.get(member.server.roles, name="Sem registro")
+    cargo = discord.utils.get(member.server.roles, name="Registrado")
     await client.add_roles(member, cargo)
 
-    canal = client.get_channel('472896652110331924')
-
+    canal = client.get_channel('470361261930971148')
     embed = discord.Embed(
-        title='Instruções abaixo:',
-        color=COR,
-        description='Para se autenticar e, ter acesso à todos os canais, você deve clicar na reação da mensagem (`🔐`).'
+       title='',
+       color=COR,
+       description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
     )
-    embed.set_author(name='Sistema de verificação', icon_url='https://media.giphy.com/media/fdkbq4UIYpRMk/giphy.gif')
-    embed.set_thumbnail(url='https://media.giphy.com/media/8maYChvLIGU8jhsHl2/giphy.gif')
+    embed.set_author(name='Olá {}!'.format(user.name))
+    embed.set_thumbnail(url=user.avatar_url)
     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+    await client.send_message(canal, embed=embed)
 
-    botmsg = await client.send_message(canal, embed=embed)
-
-    await client.add_reaction(botmsg, "🔐")
 
     global msg_id
     msg_id = botmsg.id
@@ -78,6 +75,21 @@ async def on_reaction_add(reaction, user):
      role1 = discord.utils.find(lambda r: r.name == "Sem registro", msg.server.roles)
      await client.remove_roles(user, role1)
      await client.delete_message(msg_id)
+
+     canal = client.get_channel('472896652110331924')
+
+     embed = discord.Embed(
+         title='Instruções abaixo:',
+         color=COR,
+         description='Para se autenticar e, ter acesso à todos os canais, você deve clicar na reação da mensagem (`🔐`).'
+     )
+     embed.set_author(name='Sistema de verificação', icon_url='https://media.giphy.com/media/fdkbq4UIYpRMk/giphy.gif')
+     embed.set_thumbnail(url='https://media.giphy.com/media/8maYChvLIGU8jhsHl2/giphy.gif')
+     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+
+     botmsg = await client.send_message(canal, embed=embed)
+
+     await client.add_reaction(botmsg, "🔐")
 
      canal = client.get_channel('470361261930971148')
      embed = discord.Embed(
