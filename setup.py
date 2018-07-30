@@ -53,8 +53,8 @@ async def on_member_join(member):
        color=COR,
        description='Seja bem-vindo(a) ao nosso servidor de Discord **Debuggers**!'
     )
-    embed.set_author(name='Olá {}!'.format(user.name))
-    embed.set_thumbnail(url=user.avatar_url)
+    embed.set_author(name='Olá {}!'.format(member.name))
+    embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
     await client.send_message(canal, embed=embed)
 
