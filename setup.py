@@ -448,7 +448,7 @@ async def on_message(message):
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
-            title='Links:',
+            title='Última atualização:',
             description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
                         'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
         )
@@ -471,7 +471,7 @@ async def on_message(message):
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
-            title='Links:',
+            title='última atualização:',
             description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
                         'Python/Bots - https://files.pythonhosted.org/packages/97/3c/2a97b47fd8839f8863241857bbd6a3998d1de1662b788c8d9322e5a40901/discord.py-0.16.12.tar.gz (0.16.12 - 01/10/2017)'
         )
