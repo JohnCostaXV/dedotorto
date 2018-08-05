@@ -446,8 +446,21 @@ async def on_message(message):
         embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
         embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
 
-        await client.send_message(message.channel, embed = embed)
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, ':Java:')
 
+    if message.content.lower().startswith('d!pythonv'):
+        embed = discord.Embed(
+            title='Links:',
+            description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
+                        'Python/Bots - https://files.pythonhosted.org/packages/97/3c/2a97b47fd8839f8863241857bbd6a3998d1de1662b788c8d9322e5a40901/discord.py-0.16.12.tar.gz (0.16.12 - 01/10/2017)'
+        )
+        embed.set_author(name='Debuggers BOT - Python versions', icon_url=message.author.avatar_url)
+        embed.set_thumbnail(url='https://i.imgur.com/7pL7JMN.jpg')
+        embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, ':Python:')
 
     if message.content.lower().startswith('d!publicar'):
         cargos = [
