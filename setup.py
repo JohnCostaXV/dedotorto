@@ -439,12 +439,12 @@ async def on_message(message):
     if message.content.lower().startswith('d!javav'):
         embed1 = discord.Embed(
             title='Procurando atualizações...',
-            description='⏳ Aguarde 5 segundos.'
+            description='⏳ Estamos procurando por atualizações!'
         )
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(7)
+        await asyncio.sleep(10)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -462,12 +462,12 @@ async def on_message(message):
     if message.content.lower().startswith('d!pythonv'):
         embed1 = discord.Embed(
             title='Procurando atualizações...',
-            description='⏳ Aguarde 5 segundos.'
+            description='⏳ Estamos procurando por atualizações!'
         )
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(7)
+        await asyncio.sleep(10)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
