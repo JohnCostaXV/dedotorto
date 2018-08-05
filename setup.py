@@ -437,15 +437,21 @@ async def on_message(message):
 
 
     if message.content.lower().startswith('d!javav'):
-        await client.add_reaction(message, '⏳')
-        await asyncio.sleep(4)
+        embed1 = discord.Embed(
+            description='Procurando atualizações...'
+        )
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(7)
+        await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
             title='Links:',
             description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
                         'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
         )
-        embed.set_author(name='Debuggers BOT - Java versions', icon_url=message.author.avatar_url)
+        embed.set_author(name='Debuggers BOT - Java versions', icon_url=client.user.icon_url)
         embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
         embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/u4qmnVX.png')
 
@@ -453,8 +459,14 @@ async def on_message(message):
         await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!pythonv'):
-        await client.add_reaction(message, '⏳')
-        await asyncio.sleep(4)
+        embed1 = discord.Embed(
+            description='Procurando atualizações...'
+        )
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(7)
+        await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
             title='Links:',
