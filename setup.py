@@ -436,5 +436,78 @@ async def on_message(message):
         await client.send_message(message.channel, embed=embed)
 
 
+    if message.content.lower().startswith('d!javav'):
+        embed = discord.Embed(
+            title='Links:',
+            description='[Java](https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR) - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)'
+        )
+        embed.set_author(name='Debuggers BOT - Java versions', icon_url=message.author.avatar_url)
+        embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
+        embed.set_footer(text='Versões mais recente do java', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
+
+        await client.send_message(message.channel, embed = embed)
+
+
+    if message.content.lower().startswith('d!publicar'):
+        cargos = [
+            # IDs dos cargos:
+            "472535248408674304", #Vendedor
+        ]
+        for r in message.author.roles:
+            if r.id in cargos:
+                await client.delete_message(message)
+                canal = client.get_channel('472921735805534240')
+                remover_publicacao = message.content.replace("d!publicar ", "")
+                separar = remover_publicacao.split("|", 2)
+                embed = discord.Embed(
+                    title='Produto à venda!',
+                    color=COR,
+                    description='Caso queria saber mais sobre este produto, entre em contato com o vendedor! Clique na reação abaixo (reaction) para solicitar atendimento (tenha a sua DM liberada)'
+                )
+                embed.add_field(
+                    name='Vendedor:',
+                    value=message.author.mention,
+                    inline=False
+                )
+                embed.add_field(
+                    name='Produto:',
+                    value='%s' % ''.join(separar[0]),
+                    inline=False
+                )
+                embed.add_field(
+                    name='Descrição do produto:',
+                    value='%s' % ''.join(separar[1]),
+                    inline=False
+                )
+                embed.add_field(
+                    name='Valor do produto:',
+                    value='%s' % ''.join(separar[2]),
+                    inline=False
+                )
+                embed.set_thumbnail(url='https://media.giphy.com/media/26uf4LsTj87JjVDbO/giphy.gif')
+                embed.timestamp = datetime.datetime.utcnow()
+                embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+                botmsg = await client.send_message(canal, embed=embed)
+                await client.add_reaction(botmsg, "📩")
+
+                global msg_id
+                msg_id = botmsg.id
+
+                global msg_user
+                msg_user = message.author
+
+                msg = reaction.message
+
+                    try:
+                        if reaction.emoji == "📩" and msg.id == msg_id: #and user == msg_user:
+                            await client.send_message(message.author, "O {} solicitou contato com o senhor, para tratar sobre o seu produto!".format(msg.author.name))
+                    except IndexError:
+                        await client.send_message(canal, "{}, libere seu privado!".format(message.author.mention))
+                    except:
+                        await client.send_message(canal, "{}, libere seu privadu!".format(message.author.mention))
+                    finally:
+                        pass
+
+
 
 client.run(os.environ.get("BOT_TOKEN"))
