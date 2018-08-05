@@ -444,10 +444,10 @@ async def on_message(message):
         )
         embed.set_author(name='Debuggers BOT - Java versions', icon_url=message.author.avatar_url)
         embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
-        embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/Ta1ThNc.png')
 
         msg = await client.send_message(message.channel, embed = embed)
-        await client.add_reaction(msg, ':Java:')
+        await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!pythonv'):
         embed = discord.Embed(
@@ -460,7 +460,7 @@ async def on_message(message):
         embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
 
         msg = await client.send_message(message.channel, embed = embed)
-        await client.add_reaction(msg, ':x:')
+        await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!publicar'):
         cargos = [
