@@ -454,7 +454,7 @@ async def on_message(message):
         )
         embed.set_author(name='Debuggers BOT - Java versions', icon_url='https://i.imgur.com/SadzyMQ.png')
         embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
-        embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/u4qmnVX.png')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/475761271480778782/java_318-32027.png')
 
         msg = await client.send_message(message.channel, embed = embed)
         await client.add_reaction(msg, '📌')
