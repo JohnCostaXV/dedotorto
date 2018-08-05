@@ -438,9 +438,9 @@ async def on_message(message):
 
     if message.content.lower().startswith('d!javav'):
         embed1 = discord.Embed(
-            title='Procurando atualizações...',
             description='⏳ Estamos procurando por atualizações!'
         )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
@@ -461,9 +461,9 @@ async def on_message(message):
 
     if message.content.lower().startswith('d!pythonv'):
         embed1 = discord.Embed(
-            title='Procurando atualizações...',
             description='⏳ Estamos procurando por atualizações!'
         )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
@@ -484,9 +484,9 @@ async def on_message(message):
 
     if message.content.lower().startswith('d!javascriptv'):
         embed1 = discord.Embed(
-            title='Procurando atualizações...',
             description='⏳ Estamos procurando por atualizações!'
         )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
