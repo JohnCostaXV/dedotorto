@@ -437,6 +437,9 @@ async def on_message(message):
 
 
     if message.content.lower().startswith('d!javav'):
+        await client.add_reaction(message, '⏳')
+        await asyncio.sleep(4)
+        await client.remove_reaction(message, '⏳')
         embed = discord.Embed(
             title='Links:',
             description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
@@ -450,6 +453,9 @@ async def on_message(message):
         await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!pythonv'):
+        await client.add_reaction(message, '⏳')
+        await asyncio.sleep(4)
+        await client.remove_reaction(message, '⏳')
         embed = discord.Embed(
             title='Links:',
             description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
