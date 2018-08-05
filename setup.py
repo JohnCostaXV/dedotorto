@@ -498,15 +498,15 @@ async def on_message(message):
 
                 msg = reaction.message
 
-                    try:
-                        if reaction.emoji == "📩" and msg.id == msg_id: #and user == msg_user:
-                            await client.send_message(message.author, "O {} solicitou contato com o senhor, para tratar sobre o seu produto!".format(msg.author.name))
-                    except IndexError:
-                        await client.send_message(canal, "{}, libere seu privado!".format(message.author.mention))
-                    except:
-                        await client.send_message(canal, "{}, libere seu privadu!".format(message.author.mention))
-                    finally:
-                        pass
+                try:
+                    if reaction.emoji == "📩" and msg.id == msg_id: #and user == msg_user:
+                        await client.send_message(message.author, "O {} solicitou contato com o senhor, para tratar sobre o seu produto!".format(msg.author.name))
+                except IndexError:
+                    await client.send_message(canal, "{}, libere seu privado!".format(message.author.mention))
+                except:
+                    await client.send_message(canal, "{}, libere seu privadu!".format(message.author.mention))
+                finally:
+                    pass
 
 
 
