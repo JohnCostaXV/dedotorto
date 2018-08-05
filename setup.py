@@ -473,11 +473,34 @@ async def on_message(message):
         embed = discord.Embed(
             title='Última atualização:',
             description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
-                        'Python/Bots - https://files.pythonhosted.org/packages/97/3c/2a97b47fd8839f8863241857bbd6a3998d1de1662b788c8d9322e5a40901/discord.py-0.16.12.tar.gz (0.16.12 - 01/10/2017)'
+                        'Python/Bots - http://discordpy.readthedocs.io/en/latest/api.html (Discord.py 0.10.0-alpha0 - *Sem data definida*)'
         )
         embed.set_author(name='Debuggers BOT - Python versions', icon_url='https://i.imgur.com/SadzyMQ.png')
         embed.set_thumbnail(url='https://i.imgur.com/7pL7JMN.jpg')
         embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!javascriptv'):
+        embed1 = discord.Embed(
+            title='Procurando atualizações...',
+            description='⏳ Estamos procurando por atualizações!'
+        )
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript (JavaScript 1.8.5 - 27/07/2010)\n\n'
+                        'JavaScript/Bots - https://discord.js.org/#/docs/main/stable/general/welcome (Discord.js 11.3.2 - 5 meses atrás)'
+        )
+        embed.set_author(name='Debuggers BOT - JavaScript versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/AMs6RrT.png')
+        embed.set_footer(text='Versões mais recente do JavaScript.', icon_url='https://i.imgur.com/Z9yGofL.png')
 
         msg = await client.send_message(message.channel, embed = embed)
         await client.add_reaction(msg, '📌')
