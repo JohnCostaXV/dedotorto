@@ -447,7 +447,7 @@ async def on_message(message):
         embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
 
         msg = await client.send_message(message.channel, embed = embed)
-        await client.add_reaction(msg, ':Java:')
+        await client.add_reaction(msg, :Java:)
 
     if message.content.lower().startswith('d!pythonv'):
         embed = discord.Embed(
@@ -460,7 +460,7 @@ async def on_message(message):
         embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
 
         msg = await client.send_message(message.channel, embed = embed)
-        await client.add_reaction(msg, ':Python:')
+        await client.add_reaction(msg, :Python:)
 
     if message.content.lower().startswith('d!publicar'):
         cargos = [
