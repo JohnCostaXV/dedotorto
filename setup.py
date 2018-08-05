@@ -439,12 +439,12 @@ async def on_message(message):
     if message.content.lower().startswith('d!javav'):
         embed = discord.Embed(
             title='Links:',
-            description='[Java](https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR) - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
-                        '[Java/Bukkit](https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD) - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
+            description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
+                        'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
         )
         embed.set_author(name='Debuggers BOT - Java versions', icon_url=message.author.avatar_url)
         embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
-        embed.set_footer(text='Versões mais recente do java', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://i.imgur.com/9Q2Q3pq.jpg')
 
         await client.send_message(message.channel, embed = embed)
 
