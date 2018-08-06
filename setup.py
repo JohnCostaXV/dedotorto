@@ -20,6 +20,10 @@ COR = 0x3498DB
 testmsgid = None
 testmsguser = None
 
+start_time = {"start_time1": time.time()}
+
+cooldown_time = 3600
+
 minutes = 0
 hour = 0
 msg_id = None
@@ -105,6 +109,7 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
+    start_time["start_time1"] = time.time()
     if message.content.lower().startswith('d!publicar'):
         cargos = [
             # IDs dos cargos:
@@ -564,6 +569,16 @@ async def on_message(message):
                     await client.send_message(canal, "{}, libere seu privadu!".format(message.author.mention))
                 finally:
                     pass
+
+async def cooldown():
+    await client.wait_until_ready()
+
+    while not client.is_closed:
+        await asyncio.sleep(1)
+
+        if time.time() >= start_time["start_time1"] + cooldown_time:
+            for server in client.servers:
+                await client.send_message(server.default_channel, "{}, está causando spam!")
 
 
 
