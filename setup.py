@@ -234,12 +234,21 @@ async def on_message(message):
                         description='O usuário **{}#{}**, não está mais silenciado!\n\nAutor: {}'.format(user.name, user.discriminator, message.author.mention)
                     )
                     embed.set_thumbnail(
-                        url='https://i.imgur.com/1iJeEea.jpg'
+                        url='https://media.giphy.com/media/qPD4yGsrc0pdm/giphy.gif'
                     )
                     embed.timestamp = datetime.datetime.utcnow()
-                    embed.set_footer(text='End', icon_url='https://i.imgur.com/1iJeEea.jpg')
+                    embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
                     await client.send_message(canal, embed=embed)
                     await client.remove_roles(user, cargo)
+            else:
+                 embed2 = discord.Embed(
+                     title='Permissão negada!',
+                     color=COR,
+                     description='Você não tem permissão para executar esse comando.'
+                 )
+                 embed2.timestamp = datetime.datetime.utcnow()
+                 embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                 await client.send_message(message.channel, embed=embed2)
         except IndexError:
             await client.delete_message(message)
             embedd = discord.Embed(
@@ -281,11 +290,21 @@ async def on_message(message):
                         title='SILENCIADO 🔈',
                         color=COR,
                         description='O usuário **{}#{}**, foi silenciado!\n\n**Motivo**: {}\n**Autor**: {}'.format(user.name, user.discriminator, join, message.author.mention))
-                    embed.set_thumbnail(url='https://i.imgur.com/1iJeEea.jpg')
+                    embed.set_thumbnail(url='https://media.giphy.com/media/qPD4yGsrc0pdm/giphy.gif')
                     embed.timestamp = datetime.datetime.utcnow()
-                    embed.set_footer(text='End', icon_url='https://i.imgur.com/1iJeEea.jpg')
+                    embed.set_footer(text='Debuggers', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
                     await client.send_message(canal, embed=embed)
                     await client.add_roles(user, cargo)
+            else:
+                 embed2 = discord.Embed(
+                     title='Permissão negada!',
+                     color=COR,
+                     description='Você não tem permissão para executar esse comando.'
+                 )
+                 embed2.timestamp = datetime.datetime.utcnow()
+                 embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                 await client.send_message(message.channel, embed=embed2)
+
         except IndexError:
             await client.delete_message(message)
             embedd = discord.Embed(
@@ -323,6 +342,15 @@ async def on_message(message):
                     asyncio.sleep(1)
                     await client.delete_message(message)
                     asyncio.sleep(1)
+            else:
+                 embed2 = discord.Embed(
+                     title='Permissão negada!',
+                     color=COR,
+                     description='Você não tem permissão para executar esse comando.'
+                 )
+                 embed2.timestamp = datetime.datetime.utcnow()
+                 embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                 await client.send_message(message.channel, embed=embed2)
         except IndexError:
             await client.delete_message(message)
             embedd = discord.Embed(
@@ -370,6 +398,15 @@ async def on_message(message):
                         )
                         await client.send_message(message.channel, "@everyone")
                         await client.send_message(message.channel, embed=embed)
+                else:
+                     embed2 = discord.Embed(
+                         title='Permissão negada!',
+                         color=COR,
+                         description='Você não tem permissão para executar esse comando.'
+                     )
+                     embed2.timestamp = datetime.datetime.utcnow()
+                     embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                     await client.send_message(message.channel, embed=embed2)
             except IndexError:
                 await client.delete_message(message)
                 embedd = discord.Embed(
@@ -403,7 +440,7 @@ async def on_message(message):
             )
             embed.set_author(
                 name=message.server.name,
-                icon_url='https://i.imgur.com/1iJeEea.jpg'
+                icon_url=message.server.icon_url
             )
             embed.set_image(
                 url=user.avatar_url
@@ -426,7 +463,7 @@ async def on_message(message):
             title='Informações do Servidor',
             color=0x03c3f5,
             descripition='Essas são as informações\n')
-        embed.set_author(name=message.server.name, icon_url='https://i.imgur.com/1iJeEea.jpg')
+        embed.set_author(name=message.server.name, icon_url=message.server.icon_url)
         embed.add_field(name="Nome:", value=message.server.name, inline=True)
         embed.add_field(name=":crown: Dono:", value=message.server.owner.mention)
         embed.add_field(name="ID:", value=message.server.id, inline=True)
@@ -435,9 +472,9 @@ async def on_message(message):
         embed.add_field(name=":date: Criado em:", value=message.server.created_at.strftime("%d de %bho, %Y às %H:%M"))
         embed.add_field(name="Emojis:", value=f"{len(message.server.emojis)}/100")
         embed.add_field(name=":flag_br: Região:", value='Brasil')#str(message.server.region).title())
-        embed.set_thumbnail(url='https://i.imgur.com/1iJeEea.jpg')
+        embed.set_thumbnail(url=message.server.icon_url)
         embed.timestamp = datetime.datetime.utcnow()
-        embed.set_footer(text="End", icon_url="https://i.imgur.com/1iJeEea.jpg")
+        embed.set_footer(text="Debuggers", icon_url="https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif")
         await client.send_message(message.channel, embed=embed)
 
 
