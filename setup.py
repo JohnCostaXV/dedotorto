@@ -510,6 +510,78 @@ async def on_message(message):
         msg = await client.send_message(message.channel, embed = embed)
         await client.add_reaction(msg, '📌')
 
+    if message.content.lower().startswith('d!jv'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
+                        'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
+        )
+        embed.set_author(name='Debuggers BOT - Java versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/475761271480778782/java_318-32027.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!javaversions'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
+                        'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
+        )
+        embed.set_author(name='Debuggers BOT - Java versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/475761271480778782/java_318-32027.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!jversions'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Java - https://www.java.com/inc/BrowserRedirect1.jsp?locale=pt_BR (Version 8 Update 181 - 17/07/2018)\n\n'
+                        'Java/Bukkit - https://getbukkit.org/get/uedXO8YBkhXjZwDTUVfO85a7DzAn01aD (1.13 - 22/07/2018)'
+        )
+        embed.set_author(name='Debuggers BOT - Java versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/kbK3X8k.png')
+        embed.set_footer(text='Versões mais recente do java.', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/475761271480778782/java_318-32027.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
     if message.content.lower().startswith('d!pythonv'):
         start_time["start_time1"] = time.time()
         embed1 = discord.Embed(
@@ -534,7 +606,151 @@ async def on_message(message):
         msg = await client.send_message(message.channel, embed = embed)
         await client.add_reaction(msg, '📌')
 
+    if message.content.lower().startswith('d!pythonversions'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
+                        'Python/Bots - http://discordpy.readthedocs.io/en/latest/api.html (Discord.py 0.10.0-alpha0 - *Sem data definida*)'
+        )
+        embed.set_author(name='Debuggers BOT - Python versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/7pL7JMN.jpg')
+        embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!pyversions'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
+                        'Python/Bots - http://discordpy.readthedocs.io/en/latest/api.html (Discord.py 0.10.0-alpha0 - *Sem data definida*)'
+        )
+        embed.set_author(name='Debuggers BOT - Python versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/7pL7JMN.jpg')
+        embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!pyv'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='Python - https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz (Python 3.7.0 - 27/06/2018)\n\n'
+                        'Python/Bots - http://discordpy.readthedocs.io/en/latest/api.html (Discord.py 0.10.0-alpha0 - *Sem data definida*)'
+        )
+        embed.set_author(name='Debuggers BOT - Python versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/7pL7JMN.jpg')
+        embed.set_footer(text='Versões mais recente do Python.', icon_url='https://i.imgur.com/FLmaZKT.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
     if message.content.lower().startswith('d!javascriptv'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript (JavaScript 1.8.5 - 27/07/2010)\n\n'
+                        'JavaScript/Bots - https://discord.js.org/#/docs/main/stable/general/welcome (Discord.js 11.3.2 - 5 meses atrás)'
+        )
+        embed.set_author(name='Debuggers BOT - JavaScript versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/AMs6RrT.png')
+        embed.set_footer(text='Versões mais recente do JavaScript.', icon_url='https://i.imgur.com/Z9yGofL.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!jsv'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript (JavaScript 1.8.5 - 27/07/2010)\n\n'
+                        'JavaScript/Bots - https://discord.js.org/#/docs/main/stable/general/welcome (Discord.js 11.3.2 - 5 meses atrás)'
+        )
+        embed.set_author(name='Debuggers BOT - JavaScript versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/AMs6RrT.png')
+        embed.set_footer(text='Versões mais recente do JavaScript.', icon_url='https://i.imgur.com/Z9yGofL.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!jsversions'):
+        start_time["start_time1"] = time.time()
+        embed1 = discord.Embed(
+            description='Estamos procurando por atualizações!'
+        )
+        embed1.set_author(name='Procurando atualizações...', icon_url='https://media.giphy.com/media/l3q2IYN87QjIg51kc/giphy.gif')
+        embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
+        sc = await client.send_message(message.channel, embed=embed1)
+        await client.add_reaction(message, '🔍')
+        await asyncio.sleep(10)
+        await client.delete_message(sc)
+        await client.clear_reactions(message)
+        embed = discord.Embed(
+            title='Última atualização:',
+            description='JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript (JavaScript 1.8.5 - 27/07/2010)\n\n'
+                        'JavaScript/Bots - https://discord.js.org/#/docs/main/stable/general/welcome (Discord.js 11.3.2 - 5 meses atrás)'
+        )
+        embed.set_author(name='Debuggers BOT - JavaScript versions', icon_url='https://i.imgur.com/SadzyMQ.png')
+        embed.set_thumbnail(url='https://i.imgur.com/AMs6RrT.png')
+        embed.set_footer(text='Versões mais recente do JavaScript.', icon_url='https://i.imgur.com/Z9yGofL.png')
+
+        msg = await client.send_message(message.channel, embed = embed)
+        await client.add_reaction(msg, '📌')
+
+    if message.content.lower().startswith('d!javascriptversions'):
         start_time["start_time1"] = time.time()
         embed1 = discord.Embed(
             description='Estamos procurando por atualizações!'
