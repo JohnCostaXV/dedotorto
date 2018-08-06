@@ -109,8 +109,8 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
-    start_time["start_time1"] = time.time()
     if message.content.lower().startswith('d!publicar'):
+        start_time["start_time1"] = time.time()
         cargos = [
             # IDs dos cargos:
             "472535248408674304", #Vendedor
@@ -157,6 +157,7 @@ async def on_message(message):
                 await client.send_message(canal, embed=embed)
 
     if message.content.lower().startswith('d!ban'):
+        start_time["start_time1"] = time.time()
         try:
             cargos = [
                 # IDs dos cargos:
@@ -216,6 +217,7 @@ async def on_message(message):
             pass
 
     if message.content.lower().startswith('d!unmute'):
+        start_time["start_time1"] = time.time()
         try:
             cargos = [
                 # IDs dos cargos:
@@ -273,6 +275,7 @@ async def on_message(message):
             pass
 
     if message.content.lower().startswith('d!mute'):
+        start_time["start_time1"] = time.time()
         try:
             cargos = [
                 # IDs dos cargos:
@@ -303,7 +306,9 @@ async def on_message(message):
                  )
                  embed2.timestamp = datetime.datetime.utcnow()
                  embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
-                 await client.send_message(message.channel, embed=embed2)
+                 msg = await client.send_message(message.channel, embed=embed2)
+                 await asyncio.sleep(10)
+                 await client.delete_message(msg)
 
         except IndexError:
             await client.delete_message(message)
@@ -329,6 +334,7 @@ async def on_message(message):
             pass
 
     if message.content.lower().startswith('d!say'):
+        start_time["start_time1"] = time.time()
         try:
             cargos = [
                 # IDs dos cargos:
@@ -375,62 +381,63 @@ async def on_message(message):
             pass
 
     if message.content.lower().startswith('d!anunciar'):
-            try:
-                cargos = [
-                    # IDs dos cargos:
-                    "470362038116286474", #Dono
-                    "470728749243957249", #Administrador
-                ]
-                for r in message.author.roles:
-                    if r.id in cargos:
-                        await client.delete_message(message)
-                        args = message.content.split(" ")
-                        embed = discord.Embed(
-                            title="",
-                            color=COR,
-                            description=" ".join(args[1:])
-                        )
-                        embed.set_author(name='Anúncio', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
-                        embed.timestamp = datetime.datetime.utcnow()
-                        embed.set_footer(
-                            text="Enviado por: {}".format(message.author.name),
-                            icon_url=message.author.avatar_url
-                        )
-                        await client.send_message(message.channel, "@everyone")
-                        await client.send_message(message.channel, embed=embed)
-                else:
-                     embed2 = discord.Embed(
-                         title='Permissão negada!',
-                         color=COR,
-                         description='Você não tem permissão para executar esse comando.'
-                     )
-                     embed2.timestamp = datetime.datetime.utcnow()
-                     embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
-                     await client.send_message(message.channel, embed=embed2)
-            except IndexError:
-                await client.delete_message(message)
-                embedd = discord.Embed(
-                    title='Comando incorreto!',
-                    color=COR,
-                    description='Use `!anunciar [mensagem]`'
-                )
-                embedd.timestamp = datetime.datetime.utcnow()
-                embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
-                await client.send_message(message.channel, embed=embedd)
-            except:
-                await client.delete_message(message)
-                embed2 = discord.Embed(
-                    title='Permissão negada!',
-                    color=COR,
-                    description='Você não tem permissão para executar esse comando.'
-                )
-                embed2.timestamp = datetime.datetime.utcnow()
-                embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
-                await client.send_message(message.channel, embed=embed2)
-            finally:
-                pass
+        try:
+            cargos = [
+                # IDs dos cargos:
+                "470362038116286474", #Dono
+                "470728749243957249", #Administrador
+            ]
+            for r in message.author.roles:
+                if r.id in cargos:
+                    await client.delete_message(message)
+                    args = message.content.split(" ")
+                    embed = discord.Embed(
+                        title="",
+                        color=COR,
+                        description=" ".join(args[1:])
+                    )
+                    embed.set_author(name='Anúncio', icon_url='https://images-ext-1.discordapp.net/external/BCKxPNzZzEVfkbIublv7_3wG2016jTwGk3onTemVRnM/%3Fv%3D1/https/cdn.discordapp.com/emojis/450112878108999680.gif')
+                    embed.timestamp = datetime.datetime.utcnow()
+                    embed.set_footer(
+                        text="Enviado por: {}".format(message.author.name),
+                        icon_url=message.author.avatar_url
+                    )
+                    await client.send_message(message.channel, "@everyone")
+                    await client.send_message(message.channel, embed=embed)
+            else:
+                 embed2 = discord.Embed(
+                     title='Permissão negada!',
+                     color=COR,
+                     description='Você não tem permissão para executar esse comando.'
+                 )
+                 embed2.timestamp = datetime.datetime.utcnow()
+                 embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+                 await client.send_message(message.channel, embed=embed2)
+        except IndexError:
+            await client.delete_message(message)
+            embedd = discord.Embed(
+                title='Comando incorreto!',
+                color=COR,
+                description='Use `!anunciar [mensagem]`'
+            )
+            embedd.timestamp = datetime.datetime.utcnow()
+            embedd.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+            await client.send_message(message.channel, embed=embedd)
+        except:
+            await client.delete_message(message)
+            embed2 = discord.Embed(
+                title='Permissão negada!',
+                color=COR,
+                description='Você não tem permissão para executar esse comando.'
+            )
+            embed2.timestamp = datetime.datetime.utcnow()
+            embed2.set_footer(text=message.author.name, icon_url=message.author.avatar_url)
+            await client.send_message(message.channel, embed=embed2)
+        finally:
+            pass
 
     if message.content.lower().startswith('d!avatar'):
+        start_time["start_time1"] = time.time()
         try:
             user = message.mentions[0]
             embed = discord.Embed(
@@ -459,6 +466,7 @@ async def on_message(message):
             pass
 
     if message.content.lower().startswith('d!serverinfo'):
+        start_time["start_time1"] = time.time()
         embed = discord.Embed(
             title='Informações do Servidor',
             color=0x03c3f5,
@@ -479,6 +487,7 @@ async def on_message(message):
 
 
     if message.content.lower().startswith('d!javav'):
+        start_time["start_time1"] = time.time()
         embed1 = discord.Embed(
             description='Estamos procurando por atualizações!'
         )
@@ -502,6 +511,7 @@ async def on_message(message):
         await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!pythonv'):
+        start_time["start_time1"] = time.time()
         embed1 = discord.Embed(
             description='Estamos procurando por atualizações!'
         )
@@ -525,6 +535,7 @@ async def on_message(message):
         await client.add_reaction(msg, '📌')
 
     if message.content.lower().startswith('d!javascriptv'):
+        start_time["start_time1"] = time.time()
         embed1 = discord.Embed(
             description='Estamos procurando por atualizações!'
         )
