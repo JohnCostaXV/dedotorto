@@ -859,7 +859,7 @@ async def on_message(message):
                         '**Método Main**\n\n'
                         '``java\n'
                         'public class OlaMundo {\n'
-                           '/**\n'
+                        '  /**\n'
                         '* Método que executa o programa\n'
                         '* public = É visto em qualquer lugar da aplicação. É o modificador de acesso\n'
                         '* static = é iniciado automaticamente pela JVM, sem precisar de uma instância\n'
@@ -867,15 +867,14 @@ async def on_message(message):
                         '* main = Nome do método, que é obrigatório ser este. Recebe como parâmetro um array de String.\n'
                         '* String[] args = Array de argumentos que podem ser repassados na chamada do programa.\n'
                         '* /\n'
-                           'public static void main(String[] args) {\n'
-                              'System.out.println(´Olá, Mundo!´); //Imprime na tela a frase\n'
-                           '}\n'
+                        '   public static void main(String[] args) {\n'
+                        '      System.out.println(´Olá, Mundo!´); //Imprime na tela a frase\n'
+                        '   }\n'
                         '}``'
         )
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/443025665760165909/476206777872941066/java.png")
         embed.set_author(name='Debuggers BOT - Informações sobre o Java', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/476208690572034061/debuggers.png')
         embed.set_footer(text='Informações sobre o java.')
-
         msg = await client.send_message(message.channel, embed=embed)
         await client.add_reaction(msg, '☕')
 
