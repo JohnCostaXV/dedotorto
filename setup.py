@@ -875,8 +875,7 @@ async def on_message(message):
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/443025665760165909/476206777872941066/java.png")
         embed.set_author(name='Debuggers BOT - Informações sobre o Java', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/476208690572034061/debuggers.png')
         embed.set_footer(text='Informações sobre o java.')
-        msg = await client.send_message(message.channel, embed=embed)
-        await client.add_reaction(msg, '☕')
+        await client.send_message(message.channel, embed=embed)
 
 
 async def cooldown():
