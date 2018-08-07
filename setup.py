@@ -495,7 +495,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -519,7 +519,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -543,7 +543,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -567,7 +567,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -591,7 +591,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -615,7 +615,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -639,7 +639,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -663,7 +663,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -687,7 +687,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -711,7 +711,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -735,7 +735,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -759,7 +759,7 @@ async def on_message(message):
         embed1.set_thumbnail(url='https://media.giphy.com/media/26u4arvdZ1v42ZVBK/giphy.gif')
         sc = await client.send_message(message.channel, embed=embed1)
         await client.add_reaction(message, '🔍')
-        await asyncio.sleep(10)
+        await asyncio.sleep(3)
         await client.delete_message(sc)
         await client.clear_reactions(message)
         embed = discord.Embed(
@@ -833,6 +833,52 @@ async def on_message(message):
                     await client.send_message(canal, "{}, libere seu privadu!".format(message.author.mention))
                 finally:
                     pass
+
+    if message.content.lower().startswith('d!javai'):
+        await client.add_reaction(message, '📕')
+        embed = discord.Embed(
+            color=COR,
+            description='**Informações**\n\n'
+                        'Java é uma linguagem de programação orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling,
+                        'na empresa Sun Microsystems. Diferente das linguagens de programação convencionais, que são compiladas para código nativo, a linguagem Java é'
+                        'compilada para um bytecode que é interpretado por uma máquina virtual (Java Virtual Machine, mais conhecida pela sua abreviação JVM). A linguagem'
+                        'de programação Java é a linguagem convencional da Plataforma Java, mas não é a sua única linguagem.Java é uma linguagem de programação orientada'
+                        'a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Diferente das'
+                        'linguagens de programação convencionais, que são compiladas para código nativo, a linguagem Java é compilada para um bytecode que é interpretado'
+                        'por uma máquina virtual (Java Virtual Machine, mais conhecida pela sua abreviação JVM). A linguagem de programação Java é a linguagem convencional'
+                        'da Plataforma Java, mas não é a sua única linguagem.Java é uma linguagem de programação orientada a objetos desenvolvida na década de 90 por uma'
+                        'equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Diferente das linguagens de programação convencionais, que são'
+                        'compiladas para código nativo, a linguagem Java é compilada para um bytecode que é interpretado por uma máquina virtual (Java Virtual Machine,'
+                        'mais conhecida pela sua abreviação JVM). A linguagem de programação Java é a linguagem convencional da Plataforma Java, mas não é a sua única linguagem.\n\n\n'
+                        '**Ambientes de desenvolvimento**\n\n'
+                        'Eclipse — um projeto aberto iniciado pela IBM (https://www.eclipse.org/)\n'
+                        'IntelliJ IDEA (comercial) — uma IDE desenvolvida pela JetBrains (https://www.jetbrains.com/idea/)\n'
+                        'JBuilder — um ambiente desenvolvido pela empresa Borland (site não disponível)\n'
+                        'JDeveloper (gratuito OTN) — uma IDE desenvolvida pela empresa Oracle (https://www.oracle.com/technetwork/developer-tools/jdev/overview/index.html)\n'
+                        'NetBeans (software livre) — uma IDE desenvolvida pela Sun Microsystems (https://netbeans.org/)\n\n\n'
+                        '**Método Main**\n\n'
+                        '``java\n'
+                        'public class OlaMundo {\n'
+                           '/**\n'
+                        '* Método que executa o programa\n'
+                        '* public = É visto em qualquer lugar da aplicação. É o modificador de acesso\n'
+                        '* static = é iniciado automaticamente pela JVM, sem precisar de uma instância\n'
+                        '* void = Método sem retorno (retorno vazio)\n'
+                        '* main = Nome do método, que é obrigatório ser este. Recebe como parâmetro um array de String.\n'
+                        '* String[] args = Array de argumentos que podem ser repassados na chamada do programa.\n'
+                        '* /\n'
+                           'public static void main(String[] args) {\n'
+                              'System.out.println(´Olá, Mundo!´); //Imprime na tela a frase\n'
+                           '}\n'
+                        '}``'
+        )
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/443025665760165909/476206777872941066/java.png")
+        embed.set_author(name='Debuggers BOT - Informações sobre o Java', icon_url='https://cdn.discordapp.com/attachments/443025665760165909/476208690572034061/debuggers.png')
+        embed.set_footer(text='Informações sobre o java.')
+
+        msg = await client.send_message(message.channel, embed=embed)
+        await client.add_reaction(msg, '☕')
+
 
 async def cooldown():
     await client.wait_until_ready()
